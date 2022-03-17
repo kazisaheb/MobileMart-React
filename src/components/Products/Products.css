@@ -1,0 +1,7 @@
+*{transition: all .5s ease-in-out;}
+.Products{
+  width: 200px;
+}
+.Products:hover{
+transform: scale(1.5);
+}
