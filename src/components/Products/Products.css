@@ -4,4 +4,5 @@
 }
 .Products:hover{
 transform: scale(1.5);
+box-shadow: 0px 0px 20px skyblue;
 }

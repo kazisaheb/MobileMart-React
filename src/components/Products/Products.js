@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './Products.css'
 function Products() {
-  const keyword = 'samsung'
+
+  const keyword = 'sam'
+
   const [phones, setPhones] = useState([])
   useEffect(() => {
     fetch(`https://openapi.programming-hero.com/api/phones?search=${keyword}`)
