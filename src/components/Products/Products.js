@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './Products.css'
-function Products() {
-
-  const keyword = 'sam'
+function Products({ keywords }) {
 
   const [phones, setPhones] = useState([])
   useEffect(() => {
-    fetch(`https://openapi.programming-hero.com/api/phones?search=${keyword}`)
+    fetch(`https://openapi.programming-hero.com/api/phones?search=${keywords}`)
       .then(res => res.json())
       .then(data => setPhones(data.data))
-  }, [])
+  }, [keywords])
 
   return (
     <div className='container d-flex flex-wrap justify-content-evenly'>
@@ -20,7 +18,6 @@ function Products() {
           <h5>Model: {phone.phone_name}</h5>
         </div>)
       }
-
     </div>
   );
 };

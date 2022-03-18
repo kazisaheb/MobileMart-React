@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Products from '../Products/Products';
 
 const Header = () => {
+
+  const [kws, setKws] = useState('')
+
   return (
     <div>
       <nav className="navbar navbar-expand-sm navbar-light bg-light">
@@ -18,15 +22,20 @@ const Header = () => {
                 <a className="nav-link" href="/">Products</a>
               </li>
             </ul>
-            {/* // onClick={SearchClick} */}
             <form className="d-flex">
-              <input className="form-control me-2" type="search" placeholder="Search mobile" aria-label="Search"></input>
+              <input
+
+                value={kws}
+                onChange={(e) => setKws(e.target.value)}
+
+                className="form-control me-2" type="search" placeholder="Search mobile" aria-label="Search"></input>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
         </div>
-      </nav>
-    </div>
+      </nav >
+      <Products keywords={kws} />
+    </div >
   );
 };
 
