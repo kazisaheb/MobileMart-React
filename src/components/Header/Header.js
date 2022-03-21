@@ -24,10 +24,8 @@ const Header = () => {
             </ul>
             <form className="d-flex">
               <input
-
                 value={kws}
                 onChange={(e) => setKws(e.target.value)}
-
                 className="form-control me-2" type="search" placeholder="Search mobile" aria-label="Search"></input>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form>

@@ -9,6 +9,15 @@ function Products({ keywords }) {
       .then(data => setPhones(data.data))
   }, [keywords])
 
+
+  const CartStore = (slug) => {
+    if (localStorage.getItem(slug)) {
+      alert('Already added!')
+    } else {
+      localStorage.setItem(slug, 1)
+    }
+  }
+
   return (
     <div className='container d-flex flex-wrap justify-content-evenly'>
       {
@@ -16,6 +25,7 @@ function Products({ keywords }) {
           <img src={phone.image} alt="" />
           <p>Brand: {phone.brand}</p>
           <h5>Model: {phone.phone_name}</h5>
+          <button onClick={() => CartStore(phone.slug)} className='btn btn-danger'>Add to Cart</button>
         </div>)
       }
     </div>
