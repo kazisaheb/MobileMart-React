@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { CartStore } from '../../utilities/CartStore';
 import './Products.css'
 function Products({ keywords }) {
 
@@ -8,15 +9,6 @@ function Products({ keywords }) {
       .then(res => res.json())
       .then(data => setPhones(data.data))
   }, [keywords])
-
-
-  const CartStore = (slug) => {
-    if (localStorage.getItem(slug)) {
-      alert('Already added!')
-    } else {
-      localStorage.setItem(slug, 1)
-    }
-  }
 
   return (
     <div className='container d-flex flex-wrap justify-content-evenly'>
